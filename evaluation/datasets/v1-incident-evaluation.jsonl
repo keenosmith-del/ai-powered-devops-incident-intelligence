@@ -1,3 +1,0 @@
-{"id":"eval-001","scenario":"INC-1042","type":"successful-investigation","expected":{"root_cause":"Database connection pool configuration introduced in v2.8.4","confidence":"Medium","human_approval_required":true,"evidence_grounded":true}}
-{"id":"eval-002","scenario":"INC-1051","type":"insufficient-evidence","expected":{"root_cause":null,"confidence":"Low","human_escalation_required":true,"evidence_grounded":true}}
-{"id":"eval-003","scenario":"INC-1099","type":"no-evidence","expected":{"root_cause":null,"confidence":"Low","human_escalation_required":true,"evidence_grounded":true}}
