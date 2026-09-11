@@ -58,3 +58,11 @@ demo/recordings/
 # Secrets / credentials
 secrets/
 credentials/
+
+# V1 synthetic observability evidence
+!data/logs/
+!data/logs/README.md
+!data/logs/INC-1042/
+!data/logs/INC-1042/observability.json
+!data/logs/INC-1051/
+!data/logs/INC-1051/observability.json

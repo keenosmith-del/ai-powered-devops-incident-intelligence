@@ -1,0 +1,28 @@
+{
+    "incident_id": "INC-1051",
+    "service": "Customer Portal",
+    "environment": "production",
+    "deployment_version": "v4.3.1",
+    "metrics": {
+        "http_500_rate_percent": 1.4,
+        "baseline_http_500_rate_percent": 1.1,
+        "data_quality": "Insufficient sample size"
+    },
+    "logs": [
+        {
+            "timestamp": "2026-09-11T09:12:00Z",
+            "level": "WARN",
+            "component": "customer-portal",
+            "message": "Request failed unexpectedly"
+        }
+    ],
+    "traces": [],
+    "alerts": [],
+    "historical_correlation": null,
+    "investigation_notes": [
+        "No consistent failing endpoint identified",
+        "No reliable stack trace available",
+        "No confirmed deployment correlation",
+        "Insufficient telemetry to determine root cause"
+    ]
+}

@@ -1,0 +1,70 @@
+{
+    "incident_id": "INC-1042",
+    "service": "Customer Orders API",
+    "environment": "production",
+    "deployment_version": "v2.8.4",
+    "deployment_completed_at": "2026-09-10T14:15:00Z",
+    "metrics": {
+        "before_deployment": {
+            "http_500_rate_percent": 0.2,
+            "database_connection_errors_per_minute": 1,
+            "p95_latency_ms": 180
+        },
+        "after_deployment": {
+            "http_500_rate_percent": 18.7,
+            "database_connection_errors_per_minute": 46,
+            "p95_latency_ms": 920
+        }
+    },
+    "logs": [
+        {
+            "timestamp": "2026-09-10T14:19:12Z",
+            "level": "ERROR",
+            "component": "database-client",
+            "message": "Database connection pool exhausted"
+        },
+        {
+            "timestamp": "2026-09-10T14:20:03Z",
+            "level": "ERROR",
+            "component": "orders-api",
+            "message": "Failed to acquire database connection within timeout"
+        },
+        {
+            "timestamp": "2026-09-10T14:21:47Z",
+            "level": "ERROR",
+            "component": "orders-api",
+            "message": "Unhandled database connection exception while processing order request"
+        }
+    ],
+    "traces": [
+        {
+            "trace_id": "trace-1042-001",
+            "endpoint": "POST /orders",
+            "status": 500,
+            "failed_span": "database.acquireConnection",
+            "error": "Connection acquisition timeout"
+        },
+        {
+            "trace_id": "trace-1042-002",
+            "endpoint": "GET /orders/78124",
+            "status": 500,
+            "failed_span": "database.acquireConnection",
+            "error": "Connection acquisition timeout"
+        }
+    ],
+    "alerts": [
+        {
+            "alert": "Orders API HTTP 500 rate above threshold",
+            "fired_at": "2026-09-10T14:20:00Z"
+        },
+        {
+            "alert": "Database connection pool exhaustion",
+            "fired_at": "2026-09-10T14:20:30Z"
+        }
+    ],
+    "historical_correlation": {
+        "incident_id": "INC-0978",
+        "summary": "Orders API database connection pool exhaustion after configuration change",
+        "similarity": "High"
+    }
+}
