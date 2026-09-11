@@ -1,0 +1,19 @@
+{
+    "incident_id": "INC-1042",
+    "title": "Customer Orders API HTTP 500 Errors Following Deployment",
+    "service": "Customer Orders API",
+    "severity": "SEV-1",
+    "status": "Investigating",
+    "detected_at": "2026-09-10T14:32:00Z",
+    "customer_impact": "Customers are intermittently unable to create or retrieve orders.",
+    "symptoms": [
+        "HTTP 500 responses from the Customer Orders API",
+        "Increase in database connection errors",
+        "Elevated request failure rate following deployment v2.8.4"
+    ],
+    "deployment": {
+        "version": "v2.8.4",
+        "deployed_at": "2026-09-10T14:15:00Z",
+        "environment": "production"
+    }
+}

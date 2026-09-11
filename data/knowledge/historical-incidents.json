@@ -1,0 +1,18 @@
+{
+    "incidents": [
+        {
+            "incident_id": "INC-0978",
+            "title": "Orders API database connection pool exhaustion",
+            "service": "Customer Orders API",
+            "root_cause": "Production database connection pool was configured below the workload requirement.",
+            "symptoms": [
+                "HTTP 500 responses",
+                "Database connection acquisition timeouts",
+                "Increased API latency",
+                "Database connection pool exhaustion"
+            ],
+            "resolution": "Restore the approved connection-pool configuration and restart affected application instances.",
+            "related_change": "Database connection pool configuration"
+        }
+    ]
+}

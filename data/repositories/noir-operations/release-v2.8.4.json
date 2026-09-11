@@ -1,0 +1,61 @@
+{
+    "repository": "noircloud/customer-orders-api",
+    "service": "Customer Orders API",
+    "previous_version": "v2.8.3",
+    "current_version": "v2.8.4",
+    "deployment": {
+        "environment": "production",
+        "deployed_at": "2026-09-10T14:15:00Z"
+    },
+    "commits": [
+        {
+            "sha": "a81f42c",
+            "message": "Update database connection pool configuration",
+            "author": "platform-engineering",
+            "files_changed": [
+                "config/database.js",
+                "deployment/production.yaml"
+            ]
+        },
+        {
+            "sha": "c19bd72",
+            "message": "Improve order query timeout handling",
+            "author": "orders-team",
+            "files_changed": [
+                "src/orders/orderRepository.js"
+            ]
+        },
+        {
+            "sha": "d73e110",
+            "message": "Update service dependencies",
+            "author": "orders-team",
+            "files_changed": [
+                "package.json",
+                "package-lock.json"
+            ]
+        }
+    ],
+    "configuration_changes": {
+        "database_connection_pool": {
+            "v2.8.3": {
+                "max_connections": 50,
+                "connection_timeout_ms": 5000
+            },
+            "v2.8.4": {
+                "max_connections": 10,
+                "connection_timeout_ms": 1000
+            }
+        }
+    },
+    "pull_requests": [
+        {
+            "id": "PR-2841",
+            "title": "Tune production database connection pool",
+            "merged_at": "2026-09-09T16:20:00Z",
+            "files_changed": [
+                "config/database.js",
+                "deployment/production.yaml"
+            ]
+        }
+    ]
+}

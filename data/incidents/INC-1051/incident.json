@@ -1,0 +1,18 @@
+{
+    "incident_id": "INC-1051",
+    "title": "Intermittent Customer Portal Failure With Insufficient Evidence",
+    "service": "Customer Portal",
+    "severity": "SEV-2",
+    "status": "Investigating",
+    "detected_at": "2026-09-11T09:18:00Z",
+    "customer_impact": "Some customers report intermittent portal failures.",
+    "symptoms": [
+        "Intermittent portal errors",
+        "Failures cannot currently be reproduced consistently"
+    ],
+    "deployment": {
+        "version": "v4.3.1",
+        "deployed_at": "2026-09-11T08:30:00Z",
+        "environment": "production"
+    }
+}
